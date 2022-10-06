@@ -20,16 +20,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('autores', [AutorController::class, 'index']);
-Route::get('add-autor', [AutorController::class, 'add']);
-Route::post('insert-autor', [AutorController::class, 'insert']);
-Route::get('edit-autor/{id}', [AutorController::class, 'edit']);
-Route::put('updade-autor/{id}', [AutorController::class, 'update']);
-Route::get('delete-autor/{id}', [AutorController::class, 'destroy']);
+Route::get('clientes', [AutorController::class, 'index']);
+Route::get('add-cliente', [AutorController::class, 'add']);
+Route::post('insert-cliente', [AutorController::class, 'insert']);
+Route::get('edit-cliente/{id}', [AutorController::class, 'edit']);
+Route::put('updade-cliente/{id}', [AutorController::class, 'update']);
+Route::get('delete-cliente/{id}', [AutorController::class, 'destroy']);
 
-Route::get('livros', [LivroController::class, 'index']);
-Route::get('add-livros', [LivroController::class, 'add']);
-Route::post('insert-livro', [LivroController::class, 'insert']);
-Route::get('edit-livro/{id}', [LivroController::class, 'edit']);
-Route::put('updade-livro/{id}', [LivroController::class, 'update']);
-Route::get('delete-livro/{id}', [LivroController::class, 'destroy']);
+Route::get('carros', [LivroController::class, 'index']);
+Route::get('add-carro', [LivroController::class, 'add']);
+Route::post('insert-carro', [LivroController::class, 'insert']);
+Route::get('edit-carro/{id}', [LivroController::class, 'edit']);
+Route::put('updade-carro/{id}', [LivroController::class, 'update']);
+Route::get('delete-carro/{id}', [LivroController::class, 'destroy']);
