@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    Biblioteca - Livros
+    Biblioteca - Autores
 @endsection
 
 @section('content')
@@ -9,12 +9,12 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <div class="">
-                    <h4>Livros</h4>
+                    <h4>Cliente</h4>
                 </div>
                 <div class="">
-                    <a class="nav-link" id="add" href="{{ url('add-livros') }}">
+                    <a class="nav-link" id="add" href="{{ url('add-cliente') }}">
                         <i class="bi bi-folder-plus"></i>
-                        Adicionar Livro
+                        Adicionar Cliente
                     </a>
                 </div>
             </div>
@@ -24,20 +24,22 @@
                     <thead>
                         <tr>
                             <th scope="col" class="col-md-1">Id</th>
-                            <th scope="col" class="col-md-5">Titulo</th>
-                            <th scope="col" class="col-md-4">Nome do Autor</th>
+                            <th scope="col" class="col-md-2">Nome</th>
+                            <th scope="col" class="col-md-3">Email</th>
+                            <th scope="col" class="col-md-3">Telefone</th>
                             <th scope="col" class="col-md-2">Opções</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($livro as $item)
+                        @foreach ($cliente as $item)
                             <tr>
                                 <td scope="row">{{ $item->id }}</td>
-                                <td>{{ $item->titulo }}</td>
-                                <td>{{ $item->autor->nome ?? 'null' }}</td>
+                                <td>{{ $item->nome }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->telefone }}</td>
                                 <td>
-                                    <a href="{{ url('edit-livro/'.$item->id) }}" class="btn btn-primary" id="btn"><i class="bi bi-pencil"></i></a>
-                                    <a href="{{ url('delete-livro/'.$item->id) }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <a href="{{ url('edit-cliente/'.$item->id) }}" class="btn btn-primary" id="btn"><i class="bi bi-pencil"></i></a>
+                                    <a href="{{ url('delete-cliente/'.$item->id) }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach

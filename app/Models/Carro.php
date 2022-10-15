@@ -17,9 +17,9 @@ class Carro extends Model
         'chassi',
     ];
 
-    public function autor()
+    public function cliente()
     {
-        return $this->belongsTo(Autor::class, 'cliente_id', 'id');
+        return $this->belongsTo(Cliente::class, 'cliente_id', 'id');
     }
 
 }

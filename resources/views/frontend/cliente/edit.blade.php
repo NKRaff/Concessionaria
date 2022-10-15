@@ -11,25 +11,31 @@
         </div>
         <div class="card-body">
 
-            <form action="{{ url('updade-autor/'.$autor->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('updade-cliente/'.$cliente->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row mx-5 ">
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8 mb-3">
                             <label for="">Nome</label>
-                            <input type="text" value="{{ $autor->nome }}" class="form-control" name="nome">
+                            <input type="text" value="{{ $cliente->nome }}" class="form-control" name="nome">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8 mb-3">
-                            <label for="">Biografia</label>
-                            <textarea rows="6" class="form-control" name="biografia">{{ $autor->biografia }}</textarea>
+                            <label for="">Email</label>
+                            <input type="text" value="{{ $cliente->email }}" class="form-control" name="email">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8 mb-3">
+                            <label for="">Telefone</label>
+                            <input type="text" value="{{ $cliente->telefone }}" class="form-control" name="telefone">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary">Adicionar</button>
+                            <button type="submit" class="btn btn-primary">Atualizar</button>
                         </div>
                     </div>
                 </div>

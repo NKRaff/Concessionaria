@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    //LISTA AUTORES
+    //LISTA CLIENTES
     public function index()
     {
         $cliente = Cliente::all();
         return view('frontend.cliente.index', compact('cliente'));
     }
 
-    //ADD CATEGORY
+    //ADD CLIENTE
     public function add()
     {
         return view('frontend.cliente.add');
@@ -27,11 +27,11 @@ class ClienteController extends Controller
         $cliente->email = $request->input('email');
         $cliente->telefone = $request->input('telefone');
         $cliente->save();
-        return redirect('clientes')->with('status', "Autor Adicionado com Sucesso");
+        return redirect('clientes')->with('status', "Cliente Adicionado com Sucesso");
         
     }
 
-    //UPDATE CATEGORY
+    //UPDATE CLIENTE
     public function edit($id)
     {
         $cliente = Cliente::find($id);
@@ -45,16 +45,16 @@ class ClienteController extends Controller
         $cliente->email = $request->input('email');
         $cliente->telefone = $request->input('telefone');
         $cliente->update();
-        return redirect('clientes')->with('status', "Autor Atualizado com Sucesso");
+        return redirect('clientes')->with('status', "Cliente Atualizado com Sucesso");
         
     }
 
-    //DELETE CATEGORY
+    //DELETE CLIENTE
     public function destroy($id)
     {
         $cliente = Cliente::find($id);
         $cliente->delete();
-        return redirect('clientes')->with('status', "Autor Deletada com Sucesso");
+        return redirect('clientes')->with('status', "Cliente Deletada com Sucesso");
     }
 
 }

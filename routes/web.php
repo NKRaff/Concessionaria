@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\AutorController;
-use App\Http\Controllers\LivroController;
-use App\Models\Autor;
+use App\Http\Controllers\CarroController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,16 +19,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('clientes', [AutorController::class, 'index']);
-Route::get('add-cliente', [AutorController::class, 'add']);
-Route::post('insert-cliente', [AutorController::class, 'insert']);
-Route::get('edit-cliente/{id}', [AutorController::class, 'edit']);
-Route::put('updade-cliente/{id}', [AutorController::class, 'update']);
-Route::get('delete-cliente/{id}', [AutorController::class, 'destroy']);
+Route::get('clientes', [ClienteController::class, 'index']);
+Route::get('add-cliente', [ClienteController::class, 'add']);
+Route::post('insert-cliente', [ClienteController::class, 'insert']);
+Route::get('edit-cliente/{id}', [ClienteController::class, 'edit']);
+Route::put('updade-cliente/{id}', [ClienteController::class, 'update']);
+Route::get('delete-cliente/{id}', [ClienteController::class, 'destroy']);
 
-Route::get('carros', [LivroController::class, 'index']);
-Route::get('add-carro', [LivroController::class, 'add']);
-Route::post('insert-carro', [LivroController::class, 'insert']);
-Route::get('edit-carro/{id}', [LivroController::class, 'edit']);
-Route::put('updade-carro/{id}', [LivroController::class, 'update']);
-Route::get('delete-carro/{id}', [LivroController::class, 'destroy']);
+Route::get('carros', [CarroController::class, 'index']);
+Route::get('add-carros', [CarroController::class, 'add']);
+Route::post('insert-carro', [CarroController::class, 'insert']);
+Route::get('edit-carro/{id}', [CarroController::class, 'edit']);
+Route::put('updade-carro/{id}', [CarroController::class, 'update']);
+Route::get('delete-carro/{id}', [CarroController::class, 'destroy']);

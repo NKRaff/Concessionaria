@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('cliente_id');
             $table->string('modelo');
-            $table->year('ano');
+            $table->integer('ano');
             $table->string('chassi');
             $table->timestamps();
         });

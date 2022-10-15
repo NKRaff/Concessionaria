@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">Biblioteca</a>
+        <a class="navbar-brand" href="{{ url('/') }}">Concessionaria</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>

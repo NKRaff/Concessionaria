@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    Biblioteca - Livros
+    Concessionaria - Carro
 @endsection
 
 @section('content')
@@ -11,33 +11,39 @@
         </div>
         <div class="card-body">
 
-            <form action="{{ url('updade-livro/'.$livro->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('updade-carro/'.$carro->id) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row mx-5 ">
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-6 mb-3">
                             <select class="form-select">
-                                <option value="">{{ $livro->autor->nome }}</option>
+                                <option value="">{{ $carro->cliente->nome }}</option>
                             </select>
                         </div>
                         <div class="col-2">
-                            <a class="nav-link" id="add" href="{{ url('add-autor') }}">
+                            <a class="nav-link" id="add" href="{{ url('add-cliente') }}">
                                 <i class="bi bi-folder-plus"></i>
-                                Adicionar Autor
+                                Adicionar Cliente
                             </a>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8 mb-3">
-                            <label for="">Titulo</label>
-                            <input type="text" value="{{ $livro->titulo }}" class="form-control" name="titulo">
+                            <label for="">Modelo</label>
+                            <input type="text" value="{{ $carro->modelo }}" class="form-control" name="modelo">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8 mb-3">
-                            <label for="">Sinopse</label>
-                            <textarea rows="6" class="form-control" name="sinopse">{{ $livro->sinopse }}</textarea>
+                            <label for="">Ano</label>
+                            <input type="text" value="{{ $carro->ano }}" class="form-control" name="ano">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8 mb-3">
+                            <label for="">Chassi</label>
+                            <input type="text" value="{{ $carro->chassi }}" class="form-control" name="chassi">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">

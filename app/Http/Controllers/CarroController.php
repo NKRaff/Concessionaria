@@ -3,23 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carro;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class CarroController extends Controller
 {
-    //LISTA LIVROS
+    //LISTA CARROS
     public function index()
     {
         $carro = Carro::all();
         return view('frontend.carro.index', compact('carro'));
     }
 
-    //ADD LIVROS
+    //ADD CARRO
 
     public function add()
     {
-        $carro = Carro::all();
-        return view('frontend.carro.add', compact('carro'));
+        $cliente = Cliente::all();
+        return view('frontend.carro.add', compact('cliente'));
     }
 
     public function insert(Request $request)
@@ -30,10 +31,10 @@ class CarroController extends Controller
         $carro->ano = $request->input('ano');
         $carro->chassi = $request->input('chassi');
         $carro->save();
-        return redirect('carros')->with('status', "Livro Adicionado com Sucesso");
+        return redirect('carros')->with('status', "Carro Adicionado com Sucesso");
     }
 
-    //Update Product
+    //ATUALIZAR CARRO
     public function edit($id)
     {
         $carro = Carro::find($id);
@@ -47,15 +48,15 @@ class CarroController extends Controller
         $carro->ano = $request->input('ano');
         $carro->chassi = $request->input('chassi');
         $carro->update();
-        return redirect('carros')->with('status', "Livro Atualizado com Sucesso");
+        return redirect('carros')->with('status', "Carro Atualizado com Sucesso");
     }
 
-    //Delete Protucts
+    //ATUALIZAR CARRO
     public function destroy($id)
     {
         $carro = Carro::find($id);
         $carro->delete();
-        return redirect('carros')->with('status', "Livro Deletado com Sucesso");
+        return redirect('carros')->with('status', "Carro Deletado com Sucesso");
     }
 
 }

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    Biblioteca - Autores
+    Concessionaria - Cliente
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
 
-            <form action="{{ url('insert-autor') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('insert-cliente') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row mx-5 ">
                     <div class="row d-flex justify-content-center">
@@ -22,8 +22,14 @@
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8 mb-3">
-                            <label for="">Biografia</label>
-                            <textarea rows="6" class="form-control" name="biografia"></textarea>
+                            <label for="">Email</label>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8 mb-3">
+                            <label for="">Telefone</label>
+                            <input type="text" class="form-control" name="telefone">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
